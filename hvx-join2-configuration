@@ -1,0 +1,37 @@
+scheme_version: 1
+server_url: https://172.20.0.71:443
+token: obf
+os:
+  hostname: hvx-3
+  modules:
+    - kvm
+  sysctls:
+    kernel.printk: "4 4 1 7"
+    kernel.kptr_restrict: "1"
+  dns_nameservers:
+    - 8.8.8.8
+  ntp_servers:
+    - time.google.com
+  password: rancher
+  after_install_chroot_commands:
+    - rpm -ivh https://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-15-SP4/standard/x86_64/nano-5.9-bp154.1.53.x86_64.rpm
+install:
+  mode: join
+  management_interface:
+    interfaces:
+    - name: ens18
+    method: static
+    ip: 172.20.0.73
+    subnet_mask: 255.255.0.0
+    gateway: 172.20.0.254
+    bond_options: 
+      mode: active-backup
+  force_efi: false
+  device: /dev/sda
+  data_disk: /dev/sda
+  silent: true
+  poweroff: true
+  no_format: true
+  debug: true
+  tty: ttyS0
+  force_mbr: false
