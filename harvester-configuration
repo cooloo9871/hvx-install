@@ -23,7 +23,8 @@ install:
     ip: 172.20.0.70
     subnet_mask: 255.255.0.0
     gateway: 172.20.0.254
-    bond_options: active-backup
+    bond_options: 
+      mode: active-backup
   force_efi: false
   device: /dev/sda
   data_disk: /dev/sda
