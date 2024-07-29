@@ -29,9 +29,6 @@ install:
   force_efi: false
   device: /dev/sda
   data_disk: /dev/sda
-  harvester:
-    storage_class:
-      replica_count: 1
   silent: true
   poweroff: true
   no_format: true
