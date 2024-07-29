@@ -13,7 +13,7 @@ os:
     - time.google.com
   password: rancher
   after_install_chroot_commands:
-  - rpm -ivh https://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-15-SP4/standard/x86_64/nano-5.9-bp154.1.53.x86_64.rpm
+    - rpm -ivh https://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-15-SP4/standard/x86_64/nano-5.9-bp154.1.53.x86_64.rpm
 install:
   mode: create
   management_interface:
